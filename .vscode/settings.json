@@ -1,0 +1,27 @@
+
+    {
+        "deploy": {
+            "packages": [{
+                "files": [
+                    "**/*",
+                ],
+    
+                "exclude": [
+                    "node_modules/**",
+                    ".git/**",
+                    ".vscode/**",
+                    "**/node_modules/**",
+                ],
+                "deployOnSave": false
+            }],
+            "targets": [{
+                "type": "sftp",
+                "name": "AliyunServer",
+                "dir": "/root/source/docker_ci",
+                "host": "47.104.150.42",
+                "port": 22,
+                "user": "root",
+                "privateKey": "/Users/jessica/.ssh/id_rsa"
+            }],
+        },
+    }
